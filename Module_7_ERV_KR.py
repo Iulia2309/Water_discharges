@@ -148,6 +148,7 @@ elif len(builtins.par_KR) > 2:
                     
 
 builtins.Q_KR_dates=dict(zip(builtins.daty,builtins.Q_KR))
+print(builtins.Q_KR_dates)
  
 import Module_8_OI__q_dates_IRV
 
