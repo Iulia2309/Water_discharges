@@ -80,8 +80,65 @@ for i in range(len(daty_irv)):
         builtins.H_izm.append(H_izm[i])
         builtins.Q_izm.append(Q_izm[i])
         builtins.dates_irv.append(daty_irv[i])
-               
-  
+
+print(builtins.dates_irv)
+print(builtins.H_izm)
+print(builtins.Q_izm)
+
+
+#Ищем случаи, когда за одни сутки было 2 и более ИРВ,
+#для расчетов оставляем средние значения Q и H
+builtins.dates_irv_r = []
+builtins.H_izm_r = []
+builtins.Q_izm_r = []
+builtins.dates_irv_r.extend(builtins.dates_irv)
+builtins.H_izm_r.extend(builtins.H_izm)
+builtins.Q_izm_r.extend(builtins.Q_izm)
+for i in range(len(builtins.dates_irv_r)):
+    if i == 0 or (i != 0 and builtins.dates_irv_r[i] != builtins.dates_irv_r[i-1]):
+        sum_H=builtins.H_izm_r[i]
+        n_H=1
+        sum_Q=builtins.Q_izm_r[i]
+        n_Q=1
+        for j in range(i+1, len(builtins.dates_irv_r)):
+            print(builtins.dates_irv_r[j])
+            if builtins.dates_irv_r[i] == builtins.dates_irv_r[j]:
+                print("ещё ИРВ")
+                sum_H+=builtins.H_izm_r[j]
+                print(sum_H)
+                n_H+=1
+                sum_Q+=builtins.Q_izm_r[j]
+                print(sum_Q)
+                n_Q+=1   
+        H_sr=sum_H/n_H
+        Q_sr=sum_Q/n_Q
+        print(H_sr)
+        print(Q_sr)
+    
+        builtins.H_izm_r.pop(i)  
+        builtins.H_izm_r.insert(i,H_sr)
+        builtins.Q_izm_r.pop(i)  
+        builtins.Q_izm_r.insert(i,Q_sr)
+
+
+for i in range(len(builtins.dates_irv_r)-1,-1,-1):
+    print(i)
+    print(builtins.dates_irv_r[i])
+    if builtins.dates_irv_r[i] == builtins.dates_irv_r[i-1]:
+        print(i-1)
+        builtins.dates_irv_r.pop(i)
+        builtins.H_izm_r.pop(i)  
+        builtins.Q_izm_r.pop(i)  
+
+print(builtins.H_izm_r)
+print(builtins.Q_izm_r)
+'''
+builtins.IRV={}
+
+for i in range(len(builtins.dates_irv_r)):
+    builtins.IRV[builtins.dates_irv_r[i]]=[builtins.H_izm_r[i], builtins.Q_izm_r[i]]
+print(builtins.IRV)         
+'''         
 import Module_5_q_calculation
         
 
