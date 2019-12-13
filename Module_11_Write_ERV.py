@@ -14,7 +14,7 @@ import re
 import matplotlib.pyplot as plt
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QMessageBox
-
+print("module 11")
 ouf=open(str(builtins.kat)+"/"+str(builtins.year_now)+"/"+"ЕРВ "+builtins.reason+" опт.инт..txt","w")
 
 with open(str(builtins.kat)+"/"+str(builtins.year_now)+"/"+"ЕРВ "+builtins.reason+" опт.инт..txt","r+") as ouf:
@@ -27,21 +27,32 @@ with open(str(builtins.kat)+"/"+str(builtins.year_now)+"/"+"ЕРВ "+builtins.re
         d_v_m=[31,29,31,30,31,30,31,31,30,31,30,31]
     else:
         d_v_m=[31,28,31,30,31,30,31,31,30,31,30,31]
+
+    if builtins.month_n != builtins.month_k:
    
-    j=builtins.month_n-1
-    for i in range(builtins.day_n-1,d_v_m[j]):
-        m[j][i]=builtins.Q_erv_oi_list[-builtins.day_n+i+1]
+        j=builtins.month_n-1
+        for i in range(builtins.day_n-1,d_v_m[j]):
+            m[j][i]=builtins.Q_erv_oi_list[-builtins.day_n+i+1]
             
-    k=d_v_m[builtins.month_n-1]
-    for j in range(builtins.month_n,builtins.month_k-1):
-        for i in range(d_v_m[j]):
-            m[j][i]=builtins.Q_erv_oi_list[-builtins.day_n+k+i+1]
+        k=d_v_m[builtins.month_n-1]
+        for j in range(builtins.month_n,builtins.month_k-1):
+            for i in range(d_v_m[j]):
+                m[j][i]=builtins.Q_erv_oi_list[-builtins.day_n+k+i+1]
            
-        k+=d_v_m[j]
+            k+=d_v_m[j]
             
-    j=builtins.month_k-1
-    for i in range(builtins.day_k):
-        m[j][i]=builtins.Q_erv_oi_list[-builtins.day_n+k+i+1]
+        j=builtins.month_k-1
+        for i in range(builtins.day_k):
+            m[j][i]=builtins.Q_erv_oi_list[-builtins.day_n+k+i+1]
+
+    else:
+        print("тот же месяц")
+        j=builtins.month_n-1
+        for i in range(builtins.day_n-1,builtins.day_k):
+            print(i)
+            m[j][i]=builtins.Q_erv_oi_list[-builtins.day_n+i+1]
+            print(m[j][i])
+        print(m)
 
     for i in range(31):
         if len(str(i+1)) == 1:
