@@ -13,6 +13,7 @@ import numpy
 import datetime
 import csv
 import re
+from collections import OrderedDict
 import matplotlib.pyplot as plt
 import sys  # sys нужен для передачи argv в QApplication
 from PyQt5 import QtWidgets
@@ -271,6 +272,8 @@ class Optimal(QtWidgets.QMainWindow, Prog_Form.Ui_Regim):
 
                 builtins.st_sv=max(st_sv_l)
 
+            print(builtins.par_KR)
+
             import Module_3_Extrapolation
 
       
@@ -323,7 +326,7 @@ class Optimal(QtWidgets.QMainWindow, Prog_Form.Ui_Regim):
 
         if self.checkBox.isChecked() and self.checkBox_2.isChecked() and self.checkBox_3.isChecked():
 
-            builtins.reason = "неуст. движ. потока, перем. подпора и деформ. русла" 
+            builtins.reason = "неуст. движ. потока, перем. подпора и деформ. русла"
 
         elif self.checkBox.isChecked() and self.checkBox_2.isChecked():
 
