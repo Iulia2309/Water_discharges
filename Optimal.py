@@ -272,8 +272,6 @@ class Optimal(QtWidgets.QMainWindow, Prog_Form.Ui_Regim):
 
                 builtins.st_sv=max(st_sv_l)
 
-            print(builtins.par_KR)
-
             import Module_3_Extrapolation
 
       
