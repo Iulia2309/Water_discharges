@@ -12,17 +12,14 @@ import csv
 import re
 import matplotlib.pyplot as plt
 
-print("module 10")
 builtins.Q_erv_oi={}
 builtins.Q_KR_dates=dict(zip(builtins.daty,builtins.Q_KR))
-print(builtins.Q_KR_dates)
 for key in builtins.Q_KR_dates.keys():
     date_r=key
     if key in builtins.q_int_dates:
         Q_erv_oi = builtins.Q_KR_dates[date_r]*(1+builtins.q_int_dates[key])
         builtins.Q_erv_oi[date_r]=Q_erv_oi
 
-print( builtins.Q_erv_oi)
 builtins.Q_erv_oi_list=[]
 for k in sorted(builtins.Q_erv_oi.keys()):
     if 0<=builtins.Q_erv_oi[k]<1:
@@ -34,5 +31,4 @@ for k in sorted(builtins.Q_erv_oi.keys()):
     elif builtins.Q_erv_oi[k]>100:
         builtins.Q_erv_oi_list.append(int(builtins.Q_erv_oi[k]))
                
-print(builtins.Q_erv_oi_list)
 import Module_11_Write_ERV
