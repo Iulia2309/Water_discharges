@@ -14,7 +14,7 @@ import re
 import matplotlib.pyplot as plt
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QMessageBox
-print("module 11")
+
 ouf=open(str(builtins.kat)+"/"+str(builtins.year_now)+"/"+"ЕРВ "+builtins.reason+" опт.инт..txt","w")
 
 with open(str(builtins.kat)+"/"+str(builtins.year_now)+"/"+"ЕРВ "+builtins.reason+" опт.инт..txt","r+") as ouf:
@@ -46,13 +46,9 @@ with open(str(builtins.kat)+"/"+str(builtins.year_now)+"/"+"ЕРВ "+builtins.re
             m[j][i]=builtins.Q_erv_oi_list[-builtins.day_n+k+i+1]
 
     else:
-        print("тот же месяц")
         j=builtins.month_n-1
         for i in range(builtins.day_n-1,builtins.day_k):
-            print(i)
             m[j][i]=builtins.Q_erv_oi_list[-builtins.day_n+i+1]
-            print(m[j][i])
-        print(m)
 
     for i in range(31):
         if len(str(i+1)) == 1:
