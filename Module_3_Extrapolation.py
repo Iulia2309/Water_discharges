@@ -46,8 +46,6 @@ try:
                         ekstr_file[len(ekstr_file)-1]= ekstr_file[len(ekstr_file)-1].strip().split()
                         builtins.H_max_eks = float((ekstr_file[len(ekstr_file)-1])[0])
 
-                        print(builtins.eks_vverh)
-
         elif re.match(pattern2,ekstr_file[3]):
             #экстраполяция только вниз
             builtins.eks_vniz = []
