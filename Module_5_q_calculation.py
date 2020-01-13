@@ -62,13 +62,11 @@ for i in range(len(builtins.Q_KR_izm)):
     q_i = (builtins.Q_izm[i] - builtins.Q_KR_izm[i])/builtins.Q_KR_izm[i]
     builtins.q_mp.append(q_i)
 
-print(builtins.q_mp)
 sum_sqr = 0
 for i in range(len(builtins.q_mp)):
     sum_sqr = sum_sqr + builtins.q_mp[i]**2
 
 builtins.mera_pogr = (builtins.error/100)**2/((sum_sqr/(len(builtins.q_mp)-1))-(builtins.error/100)**2)
-print(builtins.mera_pogr)
 
 if builtins.mera_pogr <= 0 or builtins.mera_pogr >= 1:
     QMessageBox.information(None, 'Информация', "Расчет ЕРВ за выбранный период " \
@@ -129,7 +127,6 @@ for i in range(len(builtins.Q_KR_izm)):
     builtins.q.append(q_i)
 
 builtins.q_dates=dict(zip(builtins.dates_irv_r,builtins.q))
-print(builtins.q_dates)
 
 import Module_6_EUV
 
