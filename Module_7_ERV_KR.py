@@ -41,14 +41,12 @@ if len(builtins.par_KR) == 2:
                        QMessageBox.warning(None, "Внимание!", "Значение среднего суточного уровня воды ниже "+
                                             "диапазона экстраполяции вниз! Выполните экстраполяцию вниз "+
                                             "с использованием данных прошлых лет!")
-                        #sys.exit()
 
 
             except NameError:
                 QMessageBox.warning(None, "Внимание!", "Значение срочного уровня воды ниже диапазона"+
                                                  "принятой опорной КР! Выполните экстраполяцию вниз"+
                                                  "в программе РЕЧНОЙ СТОК и запишите её параметры в БД!")
-                #sys.exit()
                 
         elif builtins.H_euv[i]/100 > builtins.H_max_eks:
             try:
@@ -63,13 +61,11 @@ if len(builtins.par_KR) == 2:
                                             "диапазон экстраполяции вверх! Выполните экстраполяцию вверх "+
                                             "с использованием данных прошлых лет!")
 
-                        #sys.exit()
                         
             except NameError:
                 QMessageBox.warning(None, "Внимание!", "Значение среднего суточного уровня воды превышает диапазон "+
                                                  "принятой опорной КР! Выполните экстраполяцию вверх "+
                                                  "в программе РЕЧНОЙ СТОК и запишите её параметры в БД!")
-                #sys.exit()
                 
         elif builtins.H_euv[i]/100 > builtins.H_max:
             if builtins.H_euv[i]/100<=builtins.H_max_eks:
@@ -110,13 +106,11 @@ elif len(builtins.par_KR) > 2:
                         QMessageBox.warning(None, "Внимание!", "Значение среднего суточного уровня воды ниже "+
                                             "диапазона экстраполяции вниз! Выполните экстраполяцию вниз "+
                                             "с использованием данных прошлых лет!")
-                        #sys.exit()
                         
             except NameError:
                 QMessageBox.warning(None, "Внимание!", "Значение срочного уровня воды ниже диапазона "+
                                                  "принятой опорной КР! Выполните экстраполяцию вниз "+
                                                  "в программе РЕЧНОЙ СТОК и запишите её параметры в БД!")
-                #sys.exit()
                 
         elif builtins.H_euv[i]/100 > builtins.H_max_eks:
             try:
@@ -129,13 +123,11 @@ elif len(builtins.par_KR) > 2:
                         QMessageBox.warning(None, "Внимание!", "Значение среднего суточного уровня воды превышает "+
                                             "диапазон экстраполяции вверх! Выполните экстраполяцию вверх "+
                                             "с использованием данных прошлых лет!")
-                        #sys.exit()
                         
             except NameError:
                 QMessageBox.warning(None, "Внимание!", "Значение среднего суточного уровня воды превышает диапазон "+
                                                  "принятой опорной КР! Выполните экстраполяцию вверх "+
                                                  "в программе РЕЧНОЙ СТОК и запишите её параметры в БД!")
-                #sys.exit()
                 
         elif builtins.H_euv[i]/100 > builtins.H_max:
             if builtins.H_euv[i]/100<=builtins.H_max_eks:
@@ -144,11 +136,8 @@ elif len(builtins.par_KR) > 2:
                     Q_KR_i += float(builtins.eks_vverh[j])*((builtins.H_euv[i]/100)**j)  
         
         builtins.Q_KR.append(Q_KR_i) 
-   
-                    
 
 builtins.Q_KR_dates=dict(zip(builtins.daty,builtins.Q_KR))
-print(builtins.Q_KR_dates)
  
 import Module_8_OI__q_dates_IRV
 
